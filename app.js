@@ -7,10 +7,10 @@ const app = express();
 
 app.use(helmet());  // Configuración del middleware Helmet para la seguridad
 app.use(cors()); // Configuración del middleware CORS para permitir solicitudes desde diferentes dominios
-app.use(morgan('combined')); // Configuración del middleware Morgan para el registro de solicitudes
+app.use(morgan('dev')); // Configuración del middleware Morgan para el registro de solicitudes
 app.use(express.json()); // Configuración del middleware para analizar el cuerpo de la solicitud como JSON
 
-const routes = require('./routes/routes');
+const routes = require('./routes/routes.js');
 app.use('/', routes); // Configuración de las rutas en el punto de entrada '/'
 
 const port = 6000;
